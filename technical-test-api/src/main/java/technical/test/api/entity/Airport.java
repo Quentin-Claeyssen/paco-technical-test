@@ -1,4 +1,4 @@
-package technical.test.api.record;
+package technical.test.api.entity;
 
 import lombok.Builder;
 import lombok.Data;
@@ -8,7 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Data
 @Builder
 @Document(collection = "airport")
-public class AirportRecord {
+public class Airport {
     @Id
     private String iata;
     private String name;

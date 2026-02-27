@@ -1,4 +1,4 @@
-package technical.test.api.record;
+package technical.test.api.entity;
 
 import lombok.Builder;
 import lombok.Data;
@@ -11,7 +11,7 @@ import java.util.UUID;
 @Data
 @Builder
 @Document(collection = "flight")
-public class FlightRecord {
+public class Flight {
     @Id
     private UUID id;
     private LocalDateTime departure;
