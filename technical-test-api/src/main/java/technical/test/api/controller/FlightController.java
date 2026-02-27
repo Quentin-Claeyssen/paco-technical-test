@@ -15,7 +15,7 @@ public class FlightController {
     private final FlightService flightService;
 
     @GetMapping
-    public Flux<FlightOut> getAllFlights() {
-        return flightService.getAllFlights();
+    public Flux<FlightOut> getAll() {
+        return flightService.getAll();
     }
 }

@@ -18,7 +18,7 @@ public class FlightService {
     private final FlightMapper flightMapper;
     private final AirportMapper airportMapper;
 
-    public Flux<FlightOut> getAllFlights() {
+    public Flux<FlightOut> getAll() {
         return flightRepository.findAll()
                 .flatMap(flightRecord -> airportService.findByIataCode(flightRecord.getOrigin())
                         .zipWith(airportService.findByIataCode(flightRecord.getDestination()))
