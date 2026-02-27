@@ -1,9 +1,9 @@
-package technical.test.api.representation;
+package technical.test.api.dto.output;
 
 import lombok.Data;
 
 @Data
-public class AirportRepresentation {
+public class AirportOut {
     private String iata;
     private String name;
     private String country;
