@@ -1,4 +1,4 @@
-package technical.test.api.endpoints;
+package technical.test.api.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +11,7 @@ import technical.test.api.representation.FlightRepresentation;
 @RestController
 @RequestMapping("/flight")
 @RequiredArgsConstructor
-public class FlightEndpoint {
+public class FlightController {
     private final FlightFacade flightFacade;
 
     @GetMapping
