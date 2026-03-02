@@ -68,3 +68,12 @@ TravelQuest est une application de réservation de voyages qui offre une expéri
 
 
 ## Si tu rencontres un problème n'hésite pas à créer une issue sur le repo que tu as fork et on répondra aussi vite que possible !
+
+docker run -d -p 27017:27017 --name mongodb mongo:latest
+
+Reste à faire : 
+- Mettre à jour le README avec les instructions pour lancer le projet
+- Ajouter des tests unitaires et d'intégration pour les différentes fonctionnalités
+- les versions des dépendances dans le pom.xml doivent être mises à jour et définies dans les propriétés du pom parent
+- Retourner un 206 Partial Content pour la pagination
+- Pourquoi le choix de mondo ici ?
