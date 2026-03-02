@@ -4,6 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Named;
 import org.mapstruct.ReportingPolicy;
+import technical.test.api.dto.input.FlightIn;
 import technical.test.api.entity.Flight;
 import technical.test.api.dto.output.AirportOut;
 import technical.test.api.dto.output.FlightOut;
@@ -17,12 +18,5 @@ public interface FlightMapper {
     @Mapping(target = "destination", source = "destination", ignore = true)
     FlightOut convert(Flight source);
 
-    @Mapping(target = "origin", source = "origin", qualifiedByName = "extractAirportCode")
-    @Mapping(target = "destination", source = "destination", qualifiedByName = "extractAirportCode")
-    Flight convert(FlightOut source);
-
-    @Named("extractAirportCode")
-    default String wrapImageAsList(final AirportOut source) {
-        return source.getIata();
-    }
+    Flight convert(FlightIn source);
 }
