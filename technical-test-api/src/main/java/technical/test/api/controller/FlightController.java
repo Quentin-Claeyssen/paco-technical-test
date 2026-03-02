@@ -1,6 +1,8 @@
 package technical.test.api.controller;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -15,8 +17,9 @@ public class FlightController {
     private final FlightService flightService;
 
     @GetMapping
-    public Flux<FlightOut> getAll() {
-        return flightService.getAll();
+    public Flux<FlightOut> getAll(@RequestParam(defaultValue = "0") int page) {
+        Pageable pageable = PageRequest.of(page, 6);
+        return flightService.getAll(pageable);
     }
 
     @PostMapping

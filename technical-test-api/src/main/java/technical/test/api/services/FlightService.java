@@ -1,6 +1,7 @@
 package technical.test.api.services;
 
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -23,8 +24,8 @@ public class FlightService {
     private final FlightMapper flightMapper;
     private final AirportMapper airportMapper;
 
-    public Flux<FlightOut> getAll() {
-        return flightRepository.findAll()
+    public Flux<FlightOut> getAll(Pageable pageable) {
+        return flightRepository.findAllBy(pageable)
                 .flatMap(this::addAirportOutput);
     }
 
